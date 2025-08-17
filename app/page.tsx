@@ -70,56 +70,80 @@ export default function Home() {
         </div>
 
         {/* 具体混合渲染类别 */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">混合渲染</h2>
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center justify-center">
-            {/* <HybridCard
-              icons={[
-                <Zap key="ssg" className="h-6 w-6 text-green-600" />,
-                <Code key="csr" className="h-6 w-6 text-purple-600" />,
-              ]}
-              title="SSG + CSR"
-              subtitle="静态生成 + 客户端渲染"
-              description="页面框架静态生成，动态功能客户端渲染。适用于博客、产品页面等。"
-              link="/hybrid/ssg-csr"
-              colors="from-green-50 to-purple-50"
-            />  */}
-            
-            <HybridCard
-              icons={[
-                <Zap key="ssg" className="h-6 w-6 text-green-600" />,
-                <Server key="ssr" className="h-6 w-6 text-blue-600" />,
-              ]}
-              title="PPR (Partial Prerendering)"
-              subtitle="静态生成 (SSG) + 服务端渲染 (SSR)"
-              description="静态组件预生成, 动态数据服务端渲染。适用于电商详情、用户中心。"
-              link="/hybrid/ssr-ssg"
-              colors="from-blue-50 to-green-50"
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">混合渲染</h2>
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center justify-center">
+              {/* <HybridCard
+                icons={[
+                  <Zap key="ssg" className="h-6 w-6 text-green-600" />,
+                  <Code key="csr" className="h-6 w-6 text-purple-600" />,
+                ]}
+                title="SSG + CSR"
+                subtitle="静态生成 + 客户端渲染"
+                description="页面框架静态生成，动态功能客户端渲染。适用于博客、产品页面等。"
+                link="/hybrid/ssg-csr"
+                colors="from-green-50 to-purple-50"
+              />  */}
+              
+              <HybridCard
+                icons={[
+                  <Zap key="ssg" className="h-6 w-6 text-green-600" />,
+                  <Server key="ssr" className="h-6 w-6 text-blue-600" />,
+                ]}
+                title="PPR (Partial Prerendering)"
+                subtitle="静态生成 (SSG) + 服务端渲染 (SSR)"
+                description="静态组件预生成, 动态数据服务端渲染。适用于电商详情、用户中心。"
+                link="/hybrid/ssr-ssg"
+                colors="from-blue-50 to-green-50"
+              />
 
-            {/* <HybridCard
-              icons={[
-                <RefreshCw className="h-6 w-6 text-yellow-600" />,
-                <Code key="csr" className="h-6 w-6 text-purple-600" />,
-              ]}
-              title="ISR + CSR"
-              subtitle="增量再生成 + 客户端渲染"
-              description="增量更新内容配合客户端渲染。适用于新闻网站、电商平台。"
-              link="/hybrid/isr-csr"
-              colors="from-yellow-50 to-purple-50"
-            />  
-            
-            <HybridCard
-              icons={[
-                <Server key="ssr" className="h-6 w-6 text-blue-600" />,
-                <Code key="csr" className="h-6 w-6 text-purple-600" />,
-              ]}
-              title="SSR + CSR"
-              subtitle="服务端渲染 + 客户端渲染"
-              description="关键内容服务端渲染，用户交互客户端处理。适用于社交媒体、新闻网站。"
-              link="/hybrid/ssr-csr"
-              colors="from-blue-50 to-purple-50"
-            /> */}
+              {/* <HybridCard
+                icons={[
+                  <RefreshCw className="h-6 w-6 text-yellow-600" />,
+                  <Code key="csr" className="h-6 w-6 text-purple-600" />,
+                ]}
+                title="ISR + CSR"
+                subtitle="增量再生成 + 客户端渲染"
+                description="增量更新内容配合客户端渲染。适用于新闻网站、电商平台。"
+                link="/hybrid/isr-csr"
+                colors="from-yellow-50 to-purple-50"
+              />  
+              
+              <HybridCard
+                icons={[
+                  <Server key="ssr" className="h-6 w-6 text-blue-600" />,
+                  <Code key="csr" className="h-6 w-6 text-purple-600" />,
+                ]}
+                title="SSR + CSR"
+                subtitle="服务端渲染 + 客户端渲染"
+                description="关键内容服务端渲染，用户交互客户端处理。适用于社交媒体、新闻网站。"
+                link="/hybrid/ssr-csr"
+                colors="from-blue-50 to-purple-50"
+              /> */}
+            </div>
+          </div>
+          
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Serverless</h2>
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center justify-center">
+                  <ServerlessCard
+                    title="Edge Functions"
+                    description="Edge Functions + KV"
+                    link="/serverless/edge-functions"
+                    colors="from-blue-50 to-green-50"
+                  />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center justify-center">
+                <ServerlessCard
+                    title="Node Functions"
+                    description="Node Functions + MySQL"
+                    link="/serverless/node-functions"
+                    colors="from-blue-50 to-green-50"
+                />
+              </div>
+             </div>
           </div>
         </div>
 
@@ -229,7 +253,7 @@ interface HybridCardProps {
 
 function HybridCard({ icons, title, subtitle, description, link, colors }: HybridCardProps) {
   return (
-    <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto text-center">
+    <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto text-center w-full">
       <CardHeader className={`bg-gradient-to-r ${colors} border-b transition-colors duration-300`}>
         <div className="flex items-center space-x-2 mb-3">
           {icons[0]}
@@ -238,6 +262,27 @@ function HybridCard({ icons, title, subtitle, description, link, colors }: Hybri
         </div>
         <CardTitle className="text-xl mb-2">{title}</CardTitle>
         <CardDescription className="font-semibold text-sm">{subtitle}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow p-6">
+        <p className="text-gray-700 leading-relaxed">{description}</p>
+      </CardContent>
+      <CardFooter className="p-6 pt-0">
+        <Link
+          href={link}
+          className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-base"
+        >
+          查看演示 <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
+      </CardFooter>
+    </Card>
+  )
+}
+
+function ServerlessCard({ title, subtitle, description, link, colors }: any) {
+  return (
+    <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto text-center w-full">
+      <CardHeader className={`bg-gradient-to-r ${colors} border-b transition-colors duration-300`}>
+        <CardTitle className="text-xl mb-2">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow p-6">
         <p className="text-gray-700 leading-relaxed">{description}</p>
