@@ -76,7 +76,7 @@ export const onRequestGet = async (context) => {
     success: result.success,
     data: result.success ? result.data : null,
     error: result.success ? null : result.error,
-    thisis: 'get'
+    description: 'Node Functions + MySQL'
   }), {
     status: result.success ? 200 : 500,
     headers: { 'Content-Type': 'application/json' }

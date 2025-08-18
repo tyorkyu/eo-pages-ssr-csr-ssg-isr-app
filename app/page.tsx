@@ -1,6 +1,6 @@
 import type React from "react"
 import Link from "next/link"
-import { ArrowRight, Code, Server, Zap, RefreshCw } from "lucide-react"
+import { Box, ArrowRight, Code, Server, Zap, RefreshCw } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Home() {
@@ -95,7 +95,7 @@ export default function Home() {
                 subtitle="静态生成 (SSG) + 服务端渲染 (SSR)"
                 description="静态组件预生成, 动态数据服务端渲染。适用于电商详情、用户中心。"
                 link="/hybrid/ssr-ssg"
-                colors="from-blue-50 to-green-50"
+                colors="bg-gray-800 opacity-80"
               />
 
               {/* <HybridCard
@@ -131,7 +131,7 @@ export default function Home() {
                   <ServerlessCard
                     title="Edge Functions"
                     description="Edge Functions + KV"
-                    link="/serverless/edge-functions"
+                    link="/edge-api"
                     colors="from-blue-50 to-green-50"
                   />
               </div>
@@ -139,7 +139,7 @@ export default function Home() {
                 <ServerlessCard
                     title="Node Functions"
                     description="Node Functions + MySQL"
-                    link="/serverless/node-functions"
+                    link="/node-api"
                     colors="from-blue-50 to-green-50"
                 />
               </div>
@@ -269,7 +269,8 @@ function HybridCard({ icons, title, subtitle, description, link, colors }: Hybri
       <CardFooter className="p-6 pt-0">
         <Link
           href={link}
-          className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-base"
+          className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-base pointer-events-none opacity-50 cursor-not-allowed"
+          aria-disabled="true"
         >
           查看演示 <ArrowRight className="ml-2 h-5 w-5" />
         </Link>
@@ -282,18 +283,23 @@ function ServerlessCard({ title, subtitle, description, link, colors }: any) {
   return (
     <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto text-center w-full">
       <CardHeader className={`bg-gradient-to-r ${colors} border-b transition-colors duration-300`}>
+         <div className="flex items-center space-x-2 mb-3">
+           <Box  className="h-6 w-6 text-blue-600" />
+         </div>
         <CardTitle className="text-xl mb-2">{title}</CardTitle>
+        <CardDescription className="font-semibold text-sm">Open API</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow p-6">
         <p className="text-gray-700 leading-relaxed">{description}</p>
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Link
+        <a
           href={link}
+          target="_blank"
           className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-base"
         >
           查看演示 <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+        </a>
       </CardFooter>
     </Card>
   )

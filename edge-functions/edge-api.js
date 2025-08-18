@@ -7,7 +7,7 @@ export async function onRequest({ request, params, env }) {
 
   const res = JSON.stringify({
     visitCount: visitCountInt,
-    description: '访问累加值',
+    description: 'Edge Functions + KV'
   });
 
   return new Response(res, {
